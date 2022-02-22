@@ -1,5 +1,6 @@
 package com.train.train.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -67,6 +68,7 @@ public class Train {
     private Integer availableSeatNumber;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "train")
+    @JsonIgnore
     private List<Seat> seats;
 
 }
